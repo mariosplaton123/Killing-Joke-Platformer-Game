@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 9815f3dfbb6fd32489be00d2c9c89f49
+  productGUID: 59167d30f5d59a44ca3efa641dad318a
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: 2d-platformer
+  productName: 2d-game
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -629,14 +629,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: 2d-platformer
+  metroPackageName: 2d-game
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: 2d-platformer
+  metroApplicationDescription: 2d-game
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -704,10 +704,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: b1ea1d0b-4280-4dc3-80a4-c56ce62fe91d
+  cloudProjectId: fda33a86-0711-4e3b-a574-376405d3af8a
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 2d-platformer
+  projectName: 2d-game
   organizationId: mariosplaton
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
