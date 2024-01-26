@@ -25,13 +25,13 @@ public class LaughMeterController : MonoBehaviour
     }
     private void UpdateLaughMeter(){
         if (laughMeterPercentage >= 0.75f){
-            laughMeterImage.sprite = calmSprite;
-        }
-        else if (laughMeterPercentage >= 0.5f){
             laughMeterImage.sprite = oneQuarterSprite;
         }
-        else if (laughMeterPercentage >= 0.25f){
+        else if (laughMeterPercentage >= 0.5f){
             laughMeterImage.sprite = thirdQuarterSprite;
+        }
+        else if (laughMeterPercentage >= 0.25f){
+            laughMeterImage.sprite = fullLaughSprite;
         }
         else
         {

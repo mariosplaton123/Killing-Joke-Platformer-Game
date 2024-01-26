@@ -268,7 +268,7 @@ Transform:
   m_GameObject: {fileID: 95695920}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.31, y: 0.46, z: 0.48856446}
+  m_LocalPosition: {x: 35.31, y: 0.67, z: 0.48856446}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -320,8 +320,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laughMeterImage: {fileID: 730256786}
   calmSprite: {fileID: 21300000, guid: 74766f300e741894b8408ad261177cb4, type: 3}
-  oneQuarterSprite: {fileID: 21300000, guid: 74766f300e741894b8408ad261177cb4, type: 3}
-  thirdQuarterSprite: {fileID: 21300000, guid: 925b24f6ef7e1974db2e78b3e8d48b17, type: 3}
+  oneQuarterSprite: {fileID: 21300000, guid: d469ab6309666694daea59f06255c0c7, type: 3}
+  thirdQuarterSprite: {fileID: 21300000, guid: 535089ba691f3994f899dc47232241d1, type: 3}
   fullLaughSprite: {fileID: 21300000, guid: 925b24f6ef7e1974db2e78b3e8d48b17, type: 3}
 --- !u!1 &357919302
 GameObject:
@@ -406,7 +406,7 @@ Transform:
   m_GameObject: {fileID: 357919302}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40.78, y: 0.82, z: 0}
+  m_LocalPosition: {x: 40.78, y: 0.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -444,8 +444,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.027772903, y: -0.030297935}
-  m_Size: {x: 0.58716965, y: 0.87690413}
+  m_Offset: {x: 0.027772903, y: -0.3506898}
+  m_Size: {x: 0.58716965, y: 0.9074175}
   m_Direction: 0
 --- !u!114 &357919308
 MonoBehaviour:
@@ -937,7 +937,7 @@ Transform:
   m_GameObject: {fileID: 1333199187}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 49.49, y: 0.49, z: 0.48856446}
+  m_LocalPosition: {x: 49.49, y: 0.66, z: 0.48856446}
   m_LocalScale: {x: 0.89393, y: 0.89393, z: 0.89393}
   m_ConstrainProportionsScale: 0
   m_Children: []
