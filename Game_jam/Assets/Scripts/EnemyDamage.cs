@@ -6,6 +6,7 @@ public class EnemyDamage : MonoBehaviour
 {
     private int damage = 1;
     public PlayerHealth playerHealth;
+    public PlayerMovement playerMovement;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +21,16 @@ public class EnemyDamage : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.CompareTag ("Player")){
-            if (playerHealth != null){
+            playerMovement.KBcounter = playerMovement.KBtotalTime;
+            if (other.transform.position.x <= transform.position.x){
+                playerMovement.KnockFromRight = true;
+            }
+            if (other.transform.position.x > transform.position.x){
+                playerMovement.KnockFromRight = false;
+            }
             playerHealth.TakeDamage(damage);
             Debug.Log("Damage!");
-            }
+            
         }
     }
 }
