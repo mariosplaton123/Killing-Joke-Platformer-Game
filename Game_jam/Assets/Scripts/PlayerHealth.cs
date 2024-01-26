@@ -9,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
     private int health;
     private Animator anim;
     private Rigidbody2D rb;
+    [SerializeField] private LaughMeterController laughMeterController;
+    [SerializeField] float deathYThreshhold = -5.6f;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +22,15 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (transform.position.y < deathYThreshhold){
+            Die();
+        }
     }
 
     public  void TakeDamage(int damage){
         health -= damage;
+        float laughMeterPercentage = Mathf.Clamp01((float)health / max_health);
+        laughMeterController.SetLaughMeterPercentage(laughMeterPercentage);
         if(health<=0){
             Die();
         }
@@ -32,6 +38,7 @@ public class PlayerHealth : MonoBehaviour
     private void Die(){
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
+        Invoke("RestartLevel", 2f);
     }
     private void RestartLevel(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

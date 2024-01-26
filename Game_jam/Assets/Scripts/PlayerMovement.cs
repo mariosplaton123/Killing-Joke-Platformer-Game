@@ -4,23 +4,30 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Movement Parameters")]
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
-    private SpriteRenderer sprite;
-    private Animator anim; 
-    private CapsuleCollider2D coll;
-    private enum MovementState {idle, walk, jump};
-    private MovementState state = MovementState.idle;
-    private float dirX = 0f;
+
+    [Header("Knockback Parameters")]
     [SerializeField] private float KBforce;
-    public  float KBcounter;
+    public float KBcounter;
     public float KBtotalTime;
-    public  bool KnockFromRight;
+    public bool KnockFromRight;
+
+    private SpriteRenderer sprite;
+    private Animator anim;
+    private CapsuleCollider2D coll;
+
+    private enum MovementState { Idle, Walk, Jump };
+    private MovementState state = MovementState.Idle;
+    private float dirX = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
+        // Component references
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<CapsuleCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
@@ -30,49 +37,68 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Player input for horizontal movement
         dirX = Input.GetAxisRaw("Horizontal");
-        if (KBcounter <=0){
-            rb.velocity = new Vector2(dirX * speed,rb.velocity.y);
+
+        // Check if the player is knocked back
+        if (KBcounter <= 0)
+        {
+            // Move the player horizontally
+            rb.velocity = new Vector2(dirX * speed, rb.velocity.y);
         }
-        else{
-            if(KnockFromRight == true){
-                rb.velocity = new Vector2(-KBforce, KBforce);
-            }
-            if (KnockFromRight == false){
-                rb.velocity = new Vector2(KBforce, KBforce);
-            }
+        else
+        {
+            // Apply knockback force
+            float knockbackDirection = KnockFromRight ? -1f : 1f;
+            rb.velocity = new Vector2(knockbackDirection * KBforce, KBforce);
             KBcounter -= Time.deltaTime;
         }
-        
-        if (Input.GetButtonDown("Jump") && IsGrounded()){
+
+        // Check for jump input and ground contact
+        if (Input.GetButtonDown("Jump") && IsGrounded())
+        {
+            // Apply vertical force for jumping
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
-        UpdateAnimations();
-    }   
 
-    private bool IsGrounded(){
-     return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size , 0f, Vector2.down, .1f, jumpableGround);
+        // Update player animations
+        UpdateAnimations();
     }
 
+    // Check if the player is grounded using a BoxCast
+    private bool IsGrounded()
+    {
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, 0.1f, jumpableGround);
+    }
 
-    private void UpdateAnimations(){
-        MovementState state;
-        if (dirX > 0){
-            state = MovementState.walk;
+    // Update player animations based on movement and velocity
+    private void UpdateAnimations()
+    {
+        MovementState newState;
+
+        // Determine movement state based on horizontal input
+        if (dirX > 0)
+        {
+            newState = MovementState.Walk;
             sprite.flipX = false;
         }
-        else if (dirX < 0){
-            state = MovementState.walk;
+        else if (dirX < 0)
+        {
+            newState = MovementState.Walk;
             sprite.flipX = true;
         }
-        else{
-            state = MovementState.idle;
+        else
+        {
+            newState = MovementState.Idle;
         }
 
-        if (rb.velocity.y > .1f){
-            state = MovementState.jump;
+        // If the player is jumping, override the state
+        if (rb.velocity.y > 0.1f)
+        {
+            newState = MovementState.Jump;
         }
 
-        anim.SetInteger("state",(int)state);
+        // Update animator parameter
+        anim.SetInteger("state", (int)newState);
     }
 }
