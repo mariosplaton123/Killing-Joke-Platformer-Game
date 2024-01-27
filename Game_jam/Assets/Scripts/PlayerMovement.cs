@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
+    private bool isJumping;
 
     [Header("Knockback Parameters")]
     [SerializeField] private float KBforce;
@@ -57,18 +58,23 @@ public class PlayerMovement : MonoBehaviour
         // Check for jump input and ground contact
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
+            
+            
             // Apply vertical force for jumping
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
         // Update player animations
+        isJumping = !IsGrounded();
         UpdateAnimations();
+        
     }
 
     // Check if the player is grounded using a BoxCast
     private bool IsGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, 0.1f, jumpableGround);
+
     }
 
     // Update player animations based on movement and velocity
@@ -93,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // If the player is jumping, override the state
-        if (rb.velocity.y > 0.1f)
+        if (isJumping)
         {
             newState = MovementState.Jump;
         }
