@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Update player animations
         isJumping = !IsGrounded();
-        UpdateAnimations();
+        UpdateAnimations();     
         
     }
 
