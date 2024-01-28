@@ -323,6 +323,73 @@ MonoBehaviour:
   oneQuarterSprite: {fileID: 21300000, guid: d469ab6309666694daea59f06255c0c7, type: 3}
   thirdQuarterSprite: {fileID: 21300000, guid: 535089ba691f3994f899dc47232241d1, type: 3}
   fullLaughSprite: {fileID: 21300000, guid: 925b24f6ef7e1974db2e78b3e8d48b17, type: 3}
+--- !u!1 &357229804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 357229805}
+  - component: {fileID: 357229806}
+  m_Layer: 0
+  m_Name: Checkpoint_0
+  m_TagString: Checkpoint
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &357229805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357229804}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.31, y: -2.14, z: 103.878555}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &357229806
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357229804}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.5529213}
+  m_Size: {x: 0.5, y: 3.7838688}
+  m_Direction: 0
 --- !u!1 &357919302
 GameObject:
   m_ObjectHideFlags: 0
@@ -3799,7 +3866,7 @@ Transform:
   m_GameObject: {fileID: 1744514031}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.21, y: -2.13, z: 0}
+  m_LocalPosition: {x: 2.83, y: -2.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3902,7 +3969,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laughMeterController: {fileID: 357057458}
-  deathYThreshhold: -5
+  damageOnFall: 1
+  deathYThreshold: -5.6
 --- !u!114 &1744514038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3937,3 +4005,4 @@ SceneRoots:
   - {fileID: 357057457}
   - {fileID: 618140534}
   - {fileID: 689125695}
+  - {fileID: 357229805}
