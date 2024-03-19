@@ -1,7 +1,8 @@
 # Killing Joke
 
-Welcome to Killing Joke, a classic platformer where quick reflexes and nimble movements are the keys to survival! In this game, your goal is simple: dodge the enemies and obstacles to reach the end of the level.
+Welcome to Killing Joke, a classic platformer where quick reflexes and nimble movements are the keys to survival! In this game, your goal is simple: dodge the enemies and obstacles to reach the end of the level.<br>
 
+This game was a project for the Global Game Jam 2024 that took place at Patra's Site.
 ## Storyline
 You find yourself trapped in a mysterious world filled with dangerous creatures and treacherous terrain. The only way to escape is to navigate through a series of challenging levels, each guarded by increasingly formidable foes. Can you overcome the odds and make it to safety?
 
@@ -27,4 +28,4 @@ You find yourself trapped in a mysterious world filled with dangerous creatures 
   - Marios-Angelos Platon
   - George Tsakonas
   - Venetia Schina
-This game was a project for the Global Game Jam that took place at Patra's Site
+
